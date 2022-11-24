@@ -1,17 +1,17 @@
 SELECT YEAR (order_date) AS years,
 product_sub_category, 
 product_category,
-SUM(sales) AS sales, 
+SUM(sales) AS total_sales, 
 SUM(discount_value) AS promotion_value,
 ROUND((SUM(discount_value)/SUM(sales))*100,2) AS burn_rate_percentage 
 FROM sales_report
 WHERE order_status = 'Order Finished' AND YEAR (order_date)=2012 
 GROUP BY years,product_sub_category, product_category 
-ORDER BY years,sales desc;
+ORDER BY years,total_sales desc;
 
 Result:
 
-|years|product_sub_category        |product_category|sales      |promotion_value|burn_rate_percentage|
+|years|product_sub_category        |product_category|total_sales|promotion_value|burn_rate_percentage|
 |-----|----------------------------|----------------|-----------|---------------|--------------------|
 |2,012|Office Machines             |Technology      |811,427,140|46,616,695     |5.75                |
 |2,012|Chairs & Chairmats          |Furniture       |654,168,740|26,623,882     |4.07                |
