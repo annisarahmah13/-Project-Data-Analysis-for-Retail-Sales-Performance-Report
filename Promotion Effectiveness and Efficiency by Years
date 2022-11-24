@@ -1,0 +1,17 @@
+SELECT YEAR (order_date) AS years,
+SUM(sales) AS total_sales,
+SUM(discount_value) AS promotion_value,
+ROUND((SUM(discount_value)/SUM(sales))*100,2) AS burn_rate_percentage 
+FROM sales_report
+WHERE order_status = 'Order Finished' 
+GROUP BY 1
+ORDER BY 1;
+
+Result :
+
+|years|total_sales  |promotion_value|burn_rate_percentage|
+|-----|-------------|---------------|--------------------|
+|2,009|4,613,872,681|214,330,327    |4.65                |
+|2,010|4,059,100,607|197,506,939    |4.87                |
+|2,011|4,112,036,186|214,611,556    |5.22                |
+|2,012|4,482,983,158|225,867,642    |5.04                |
