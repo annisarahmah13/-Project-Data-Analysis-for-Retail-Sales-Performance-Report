@@ -3,7 +3,7 @@ product_sub_category,
 SUM(sales) AS total_sales 
 FROM sales_report 
 WHERE order_status = 'Order Finished' 
-AND YEAR(order_date)>2010
+AND YEAR(order_date) IN (2011,2012)
 GROUP by 1, 2 
 ORDER BY 1,total_sales DESC;
 
@@ -45,3 +45,8 @@ Result:
 |2,012|Scissors, Rulers & Trimmers |36,776,400 |
 |2,012|Labels                      |10,007,040 |
 |2,012|Rubber Bands                |3,837,880  |
+
+Jumlah penjualan (total_sales) pada tahun 2011 terbanyak yaitu sub kategori produk Chairs & Chairmats, 
+sedangkan pada tahun 2012 adalah sub kategori produk Office Machines.Jumlah penjualan terbanyak terjadi pada tahun 2012 yaitu sebanyak 811,427,140, 
+namun tidak semua sub kategori produk mengalami kenaikan jumlah penjualan dari tahun 2011 sampai 2012. 
+
