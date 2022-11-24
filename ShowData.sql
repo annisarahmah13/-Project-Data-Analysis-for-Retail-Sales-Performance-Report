@@ -1,4 +1,6 @@
-select * from sales_report;
+SELECT * FROM sales_report;
+
+Result:
 
 |order_status   |customer           |order_date|order_quantity|sales     |discount|discount_value|product_category|
 |---------------|-------------------|----------|--------------|----------|--------|--------------|----------------|
